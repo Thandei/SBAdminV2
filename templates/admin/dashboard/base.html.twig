@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'admin/partials/_head.html.twig' %}
+
+</head>
+
+<body >
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('admin') }}
+{% endblock %}
+<!-- [Global Scripts] end -->
+
+</body>
+<!-- [Body] end -->
+
+</html>
