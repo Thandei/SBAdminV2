@@ -14,7 +14,6 @@
         "doctrine/doctrine-bundle": "^2.8",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.14",
-        "hwi/oauth-bundle": "2.0.x-dev",
         "knpuniversity/oauth2-client-bundle": "*",
         "league/oauth2-google": "*",
         "nelmio/cors-bundle": "^2.3",

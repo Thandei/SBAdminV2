@@ -16,7 +16,7 @@ class DashboardController extends AbstractController
 
          //   return $this->redirectToRoute('app_admin_auth_signin');
         //}
-            return $this->render('index.html.twig');
+            return $this->render('admin/dashboard/index.html.twig');
 
 
     }
