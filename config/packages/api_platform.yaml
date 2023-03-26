@@ -1,0 +1,11 @@
+api_platform:
+
+  # The title of the API.
+  title: "Custom API"
+
+  # The description of the API.
+  description: 'API description'
+
+  # The version of the API.
+  version: '0.0.2'
+

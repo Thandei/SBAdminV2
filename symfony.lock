@@ -60,6 +60,7 @@
             "./migrations/.gitignore"
         ]
     },
+<<<<<<< HEAD
     "knpuniversity/oauth2-client-bundle": {
         "version": "2.14",
         "recipe": {
@@ -72,6 +73,8 @@
             "./config/packages/knpu_oauth2_client.yaml"
         ]
     },
+=======
+>>>>>>> 33725b8ec07eb328d3a81f68871714afcdd45c52
     "nelmio/cors-bundle": {
         "version": "2.3",
         "recipe": {
