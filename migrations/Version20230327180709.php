@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20230321081423 extends AbstractMigration
+final class Version20230327180709 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,13 +21,19 @@ final class Version20230321081423 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE access_token (id INT AUTO_INCREMENT NOT NULL, user_id INT NOT NULL, token VARCHAR(255) NOT NULL, valid TINYINT(1) DEFAULT NULL, created_at DATETIME NOT NULL COMMENT \'(DC2Type:datetime_immutable)\', UNIQUE INDEX UNIQ_B6A2DD685F37A13B (token), INDEX IDX_B6A2DD68A76ED395 (user_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE account (id INT AUTO_INCREMENT NOT NULL, account_holder_id INT NOT NULL, account_manager_id INT NOT NULL, balance DOUBLE PRECISION NOT NULL, INDEX IDX_7D3656A4FC94BA8B (account_holder_id), UNIQUE INDEX UNIQ_7D3656A484A5C6C7 (account_manager_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE access_token ADD CONSTRAINT FK_B6A2DD68A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
+        $this->addSql('ALTER TABLE account ADD CONSTRAINT FK_7D3656A4FC94BA8B FOREIGN KEY (account_holder_id) REFERENCES user (id)');
+        $this->addSql('ALTER TABLE account ADD CONSTRAINT FK_7D3656A484A5C6C7 FOREIGN KEY (account_manager_id) REFERENCES user (id)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('ALTER TABLE access_token DROP FOREIGN KEY FK_B6A2DD68A76ED395');
+        $this->addSql('ALTER TABLE account DROP FOREIGN KEY FK_7D3656A4FC94BA8B');
+        $this->addSql('ALTER TABLE account DROP FOREIGN KEY FK_7D3656A484A5C6C7');
         $this->addSql('DROP TABLE access_token');
+        $this->addSql('DROP TABLE account');
     }
 }

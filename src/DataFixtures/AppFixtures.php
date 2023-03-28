@@ -29,5 +29,15 @@ class AppFixtures extends Fixture
 
         $manager->persist($user);
         $manager->flush();
+
+        $secondaryUser = new User();
+        $secondaryUser->setUsername('umut');
+
+        $password = $this->hasher->hashPassword($secondaryUser, '123');
+        $secondaryUser->setPassword($password);
+        $secondaryUser->setRoles(["ROLE_USER"]);
+
+        $manager->persist($secondaryUser);
+        $manager->flush();
     }
 }
